@@ -3,4 +3,5 @@ beanmachine
 black
 ipython
 jupyterlab
+nest_asyncio
 pystan
