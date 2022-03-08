@@ -8,3 +8,7 @@ See the notebooks in the `notebooks` directory.
 - `source bin/activate`
 - `python -m pip install pip-tools`
 - `pip-sync`
+
+## Altair Figures
+
+Alas, the Altair figures in the notebooks will not render on GitHub. However, the figures to appear correctly when the notebooks are rendered with [nbviewer](https://nbviewer.org).
