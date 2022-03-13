@@ -7,7 +7,9 @@ See the notebooks in the `notebooks` directory.
 - `/usr/local/bin/python3 -m venv --upgrade-deps .`
 - `source bin/activate`
 - `python -m pip install pip-tools`
-- `pip-sync`
+- `pip-sync requirements.in`
+- `pip-sync dev-requirements.in`
+- `pip-compile requirements.txt dev-requirements.txt`
 
 ## Altair Figures
 

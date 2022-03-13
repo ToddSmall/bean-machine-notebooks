@@ -44,20 +44,19 @@ backcall==0.2.0
     # via ipython
 beanmachine==0.1.1
     # via -r requirements.in
+beautifulsoup4==4.10.0
+    # via nbconvert
 black==22.1.0
-    # via
-    #   -r requirements.in
-    #   beanmachine
-    #   ipython
+    # via beanmachine
 bleach==4.1.0
     # via nbconvert
-botorch==0.6.0
+botorch==0.6.2
     # via beanmachine
 certifi==2021.10.8
     # via requests
 cffi==1.15.0
     # via argon2-cffi-bindings
-cftime==1.5.2
+cftime==1.6.0
     # via netcdf4
 charset-normalizer==2.0.12
     # via
@@ -83,11 +82,11 @@ entrypoints==0.4
     #   jupyter-client
     #   jupyterlab-server
     #   nbconvert
-executing==0.8.2
+executing==0.8.3
     # via stack-data
-flowtorch==0.5
+flowtorch==0.6
     # via beanmachine
-fonttools==4.29.1
+fonttools==4.30.0
     # via matplotlib
 frozenlist==1.3.0
     # via
@@ -99,7 +98,7 @@ gpytorch==1.6.0
     #   botorch
 graphviz==0.19.1
     # via beanmachine
-httpstan==4.7.0
+httpstan==4.7.1
     # via pystan
 idna==3.3
     # via
@@ -108,7 +107,7 @@ idna==3.3
     #   yarl
 ipykernel==6.9.1
     # via notebook
-ipython==8.0.1
+ipython==8.1.1
     # via
     #   -r requirements.in
     #   ipykernel
@@ -116,7 +115,6 @@ ipython==8.0.1
 ipython-genutils==0.2.0
     # via
     #   jupyter-server
-    #   nbformat
     #   notebook
 jedi==0.18.1
     # via ipython
@@ -156,7 +154,8 @@ jupyter-server==1.13.5
     #   jupyterlab
     #   jupyterlab-server
     #   nbclassic
-jupyterlab==3.2.9
+    #   notebook-shim
+jupyterlab==3.3.1
     # via -r requirements.in
 jupyterlab-pygments==0.1.2
     # via nbconvert
@@ -166,7 +165,7 @@ kiwisolver==1.3.2
     # via matplotlib
 markupsafe==2.1.0
     # via jinja2
-marshmallow==3.14.1
+marshmallow==3.15.0
     # via
     #   httpstan
     #   webargs
@@ -182,17 +181,19 @@ multidict==6.0.2
     # via
     #   aiohttp
     #   yarl
+multipledispatch==0.6.0
+    # via botorch
 mypy-extensions==0.4.3
     # via black
-nbclassic==0.3.5
+nbclassic==0.3.6
     # via jupyterlab
-nbclient==0.5.11
+nbclient==0.5.13
     # via nbconvert
-nbconvert==6.4.2
+nbconvert==6.4.4
     # via
     #   jupyter-server
     #   notebook
-nbformat==5.1.3
+nbformat==5.2.0
     # via
     #   jupyter-server
     #   nbclient
@@ -209,7 +210,9 @@ netcdf4==1.5.8
     # via arviz
 notebook==6.4.8
     # via nbclassic
-numpy==1.22.2
+notebook-shim==0.1.0
+    # via nbclassic
+numpy==1.22.3
     # via
     #   altair
     #   arviz
@@ -232,6 +235,7 @@ packaging==21.3
     #   jupyter-server
     #   jupyterlab
     #   jupyterlab-server
+    #   marshmallow
     #   matplotlib
     #   statsmodels
     #   webargs
@@ -330,22 +334,25 @@ six==1.16.0
     # via
     #   asttokens
     #   bleach
+    #   multipledispatch
     #   patsy
     #   plotly
     #   python-dateutil
 sniffio==1.2.0
     # via anyio
+soupsieve==2.3.1
+    # via beautifulsoup4
 stack-data==0.2.0
     # via ipython
 statsmodels==0.13.2
     # via beanmachine
 tenacity==8.0.1
     # via plotly
-terminado==0.13.1
+terminado==0.13.3
     # via
     #   jupyter-server
     #   notebook
-testpath==0.5.0
+testpath==0.6.0
     # via nbconvert
 threadpoolctl==3.1.0
     # via scikit-learn
@@ -353,7 +360,7 @@ tomli==2.0.1
     # via black
 toolz==0.11.2
     # via altair
-torch==1.10.2
+torch==1.11.0
     # via
     #   beanmachine
     #   botorch
@@ -367,7 +374,7 @@ tornado==6.1
     #   jupyterlab
     #   notebook
     #   terminado
-tqdm==4.62.3
+tqdm==4.63.0
     # via beanmachine
 traitlets==5.1.1
     # via
@@ -394,9 +401,9 @@ webargs==8.1.0
     # via httpstan
 webencodings==0.5.1
     # via bleach
-websocket-client==1.2.3
+websocket-client==1.3.1
     # via jupyter-server
-xarray==0.21.1
+xarray==2022.3.0
     # via
     #   arviz
     #   beanmachine
