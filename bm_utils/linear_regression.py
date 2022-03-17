@@ -1,6 +1,21 @@
+from typing import Union
+
 import beanmachine.ppl as bm
 import torch
 import torch.distributions as dist
+from typing_extensions import TypeGuard
+
+
+def is_rvidentifier_list(
+    val: list[Union[bm.RVIdentifier, torch.Tensor]]
+) -> TypeGuard[list[bm.RVIdentifier]]:
+    return all(isinstance(x, bm.RVIdentifier) for x in val)
+
+
+def is_rvidentifier_dict(
+    val: dict[Union[bm.RVIdentifier, torch.Tensor], torch.Tensor]
+) -> TypeGuard[dict[bm.RVIdentifier, torch.Tensor]]:
+    return all(isinstance(k, bm.RVIdentifier) for k in val)
 
 
 def load_data() -> dict[str, torch.Tensor]:
@@ -48,9 +63,15 @@ def main() -> None:
     num_chains = 4
     data = load_data()
     model = LinearRegressionModel(x_obs=data["x_obs"])
+
+    queries=[model.beta_0(), model.beta_1(), model.sigma()]
+    observations={model.y(): data["y_obs"]}
+    assert is_rvidentifier_list(queries)
+    assert is_rvidentifier_dict(observations)
+
     samples = bm.inference.BMGInference().infer(
-        queries=[model.beta_0(), model.beta_1(), model.sigma()],
-        observations={model.y(): data["y_obs"]},
+        queries=queries,
+        observations=observations,
         num_samples=num_samples,
         num_chains=num_chains,
     )
